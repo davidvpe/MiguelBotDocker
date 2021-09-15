@@ -1,0 +1,17 @@
+#!/bin/bash
+
+git clone https://github.com/davidvpe/evobot
+
+cd evobot
+
+npm install
+
+cat config.json.example | \
+    jq --arg TOKEN "$TOKEN" \
+    --arg YOUTUBETOKEN "$YOUTUBETOKEN" \
+    '.TOKEN = $TOKEN | .YOUTUBE_API_KEY = $YOUTUBETOKEN | .MAX_PLAYLIST_SIZE = 100 | .PREFIX = "!" | .LOCALE = "es" | .DEFAULT_VOLUME = 50' \
+    > config.json
+
+cat config.json 
+
+npm start
