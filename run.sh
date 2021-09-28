@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/KiwiPopper/evobot
+git clone https://github.com/eritislami/evobot
 
 cd evobot
 
